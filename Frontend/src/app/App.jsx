@@ -27,7 +27,7 @@ function App() {
   }
   useEffect(()=>{
     
-    const provider=new SocketIOProvider("http://localhost:3000", "monaco",ydoc,{autoConnect:true});
+    const provider=new SocketIOProvider("/", "monaco",ydoc,{autoConnect:true});
     provider.awareness.setLocalStateField("user",{username})
     provider.awareness.on("change",()=>{
       const states=Array.from(provider.awareness.getStates().values())
